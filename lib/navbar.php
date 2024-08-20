@@ -15,5 +15,22 @@
             ?>
 
         </ul>
+        <div class="menu_desplegrable move">
+            <ul>
+                <li class="menu_desplegrable__items"><a href="index.php">Inicio</a></li>
+                <li class="menu_desplegrable__items penultimo"><a href="category.php">Catalogo</a></li>
+                <?php
+                if (!isset($_SESSION['usuario_id'])) {
+                    echo "<li class='menu_desplegrable__items'><a href='login.php'> Iniciar Sesión</a></li>";
+                } else {
+                    echo "<li class='menu_desplegrable__items'><a href='./lib/cerrar_sesion.php'>Cerrar Sesión</a></li>";
+                }
+                ?>
+
+            </ul>
+        </div>
+        <button id="btn-menu">
+            <ion-icon name="menu"></ion-icon>
+        </button>
     </nav>
 </header>
