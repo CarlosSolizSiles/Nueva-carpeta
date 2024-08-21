@@ -29,7 +29,7 @@ function guardarProductoEnLocalStorage(idProducto) {
 
 
 // Función para guardar el ID del producto en localStorage
-function eliminarProductoEnLocalStorage(posicionProducto) {
+function eliminarProductoEnLocalStorage(posicionProducto, siActualizo) {
     // Obtener los productos guardados en localStorage
     let productosGuardados = JSON.parse(localStorage.getItem('productos')) || [];
 
@@ -40,6 +40,9 @@ function eliminarProductoEnLocalStorage(posicionProducto) {
     localStorage.setItem('productos', JSON.stringify(productosGuardados));
 
     console.log(`Producto con una posicion ${posicionProducto} eliminado en localStorage.`);
+    if (siActualizo) {
+        mostrarCarrito()
+    }
 }
 
 
@@ -63,12 +66,12 @@ async function mostrarCarrito() {
         container.insertAdjacentHTML("afterbegin", `<div class="card-container">
         <div class="card-header">
             <h2 class="card-title">${data["nombre"]}</h2>
-            <button class="card-close-button" onclick='eliminarProductoEnLocalStorage(${i})'>×</button>
+            <button class="card-close-button" onclick='eliminarProductoEnLocalStorage(${i}, true)'>×</button>
         </div>
         <div class="card-content">
             <div class="card-description">
                 <p class="card-text">${data["descripcion"]}</p>
-                <p class="card-price">$${data["precio"]}</p>
+                <p class="card-price">${data["precio"]}$</p>
             </div>
         </div>
         <div class="card-footer">
