@@ -66,10 +66,9 @@ async function mostrarCarrito() {
             <button class="card-close-button" onclick='eliminarProductoEnLocalStorage(${i})'>×</button>
         </div>
         <div class="card-content">
-            <img src="https://via.placeholder.com/150" alt="Imagen del Producto" class="card-image">
             <div class="card-description">
                 <p class="card-text">${data["descripcion"]}</p>
-                <p class="card-price">${data["precio"]}$</p>
+                <p class="card-price">$${data["precio"]}</p>
             </div>
         </div>
         <div class="card-footer">

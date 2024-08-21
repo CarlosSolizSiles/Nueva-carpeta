@@ -24,7 +24,7 @@
                 require './lib/db.php';
                 function rederElement($id, $name, $descripcion, $precio)
                 {
-                    echo "<div class='card-container'><div class='card-header'><h2 class='card-title'>$name</h2></div><div class='card-content'><img src='https://via.placeholder.com/150' alt='Imagen del Producto' class='card-image'><div class='card-description'><p class='card-text'>$descripcion</p><p class='card-price'>$precio$</p></div></div><div class='card-footer'><button class='card-pay-button' onclick='guardarProductoEnLocalStorage($id)'>Añadir</button></div></div>";
+                    echo "<div class='card-container'><div class='card-header'><h2 class='card-title'>$name</h2></div><div class='card-content'><div class='card-description'><p class='card-text'>$descripcion</p><p class='card-price'>$$precio</p></div></div><div class='card-footer'><button class='card-pay-button' onclick='guardarProductoEnLocalStorage($id)'>Añadir</button></div></div>";
                 }
 
                 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
